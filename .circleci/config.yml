@@ -7,7 +7,7 @@ jobs:
     - checkout
     - run: python main.py
     - store_test_results:
-        path: ./storage
+        path: ./tests_output
   test:
     docker:
       - image: cimg/python:3.10.12
@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: python test_main.py
       - store_test_results:
-          path: ./storage_test
+          path: ./tests_output
 workflows:
   build_and_test:
     jobs:
